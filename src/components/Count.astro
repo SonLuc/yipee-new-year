@@ -1,14 +1,84 @@
----
-let value: number = 10
----
-<h1>{value}</h1>
+<script src="../js/countdown.ts"></script>
+<script src="../js/confetti-2.ts"></script>
 
+<h1 id="count">10</h1>
+<button id="initCount">Iniciar cuenta atrás</button>
+<audio id="audio-count" src="/audio/10 Second Beep Timer.mp3" />
+
+<div class="happy-new-year">
+	<h3 id="message">¡Feliz año nuevo!</h3>
+	<img src="/img/yipee.png" alt="">
+	<audio id="audio" src="/audio/yipee.mp3" />
+	<audio id="audio-fireworks" src="/audio/Fireworks with Sound Effects.mp3" />
+	<audio id="audio-music" src="/audio/UN AÑO MÁS - LA SONORA DE TOMMY REY.mp3" />
+</div>
+
+<canvas id="confetti"></canvas>
+<canvas id="fireworks"></canvas>
+<canvas id="confetti-2"></canvas>
 <style>
   h1 {
-    color: #fff;
-    font-size: 8rem;
+    display: none;
+    color: #000;
+    font-size: 15rem;
+		font-weight: 800;
     text-align: center;
-    margin: 0;
-    padding: 0;
   }
+	h1.show {
+		display: block;
+	}
+
+	h3 {
+		font-family: 'Onest', sans-serif;
+		font-weight: bold;
+		font-size: 2rem;
+		text-align: center;
+	}
+	.happy-new-year{
+		display: none;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.happy-new-year img{
+		width: 100%;
+		max-width: 500px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.happy-new-year.show{
+		display: block;
+		opacity: 1;
+	}
+
+  button {
+		font-family: 'Onest', sans-serif;
+		font-weight: 500;
+		padding: 0.5rem 1rem;
+		border: 2px solid #000;
+		border-radius: 0.5rem;
+		background-color: transparent;
+		color: #000;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	}
+
+	button.hide{
+		display: none;
+	}
+
+	button:hover {
+		background-color: #000;
+		color: #fff;
+	}
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
 </style>

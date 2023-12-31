@@ -5,34 +5,15 @@ import Count from '../components/Count.astro';
 <Layout title="Countdown">
 	<main>
 		<Count />
-		<button id="initCount">Iniciar cuenta atrás</button>
 	</main>
 </Layout>
 
 <style>
 	main {
-		background-color: #000;
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
-
-	button {
-		font-family: 'Onest', sans-serif;
-		font-weight: 500;
-		padding: 1rem 1.5rem;
-		border: 5px solid #fff;
-		border-radius: 1rem;
-		background-color: transparent;
-		color: #fff;
-		font-size: 2rem;
-		cursor: pointer;
-		transition: all 0.2s ease-in-out;
-	}
-	button:hover {
-		background-color: #fff;
-		color: #000;
 	}
 </style>
